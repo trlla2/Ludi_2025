@@ -3,7 +3,18 @@ using UnityEngine;
 public class RhythmGameManager : MonoBehaviour
 {
     private static RhythmGameManager instance;
-    public static RhythmGameManager Instance { get; private set; }
+    public static RhythmGameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new RhythmGameManager();
+
+            }
+            return instance;
+        }
+    }
 
     [Header("SETUP")]
 
@@ -46,6 +57,10 @@ public class RhythmGameManager : MonoBehaviour
         return currentRhythmSystem.GetAbsBeatTime();
     }
 
+    public void GetButtonsPressed(int points)
+    {
+        Debug.Log(points + " points added");
+    }
 }
 
 
