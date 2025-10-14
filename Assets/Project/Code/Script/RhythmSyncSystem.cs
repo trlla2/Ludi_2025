@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RhythmSyncSystem : MonoBehaviour
 {
@@ -8,21 +9,33 @@ public class RhythmSyncSystem : MonoBehaviour
     float beatTime = 0;
 
     [SerializeField]
-    private bool isMp3 = false;
-    float initialDelay = 0.1f;
+    float initialDelay = 0.0f;
 
     [SerializeField]
     private AudioSource musicSource;
 
-
+    
     private void Start()
     {
-        beatTime = 60.0f / bpm; // beats * second
+        beatTime = 60.0f / bpm; // beats/second
+
+        if (RhythmGameManager.Instance != null)
+        {
+            RhythmGameManager.Instance.RegisterRhythmSystem(this);
+        }
     }
 
-    private float GetBeatTime()
+    private void OnDestroy()
     {
-        float songTime = musicSource.time;
+        if (RhythmGameManager.Instance != null)
+        {
+            RhythmGameManager.Instance.UnregisterRhythmSystem();
+        }
+    }
+    
+    public float GetBeatTime()
+    {
+        float songTime = musicSource.time + initialDelay;
 
         float currentBeat = songTime / beatTime;
 
@@ -30,9 +43,8 @@ public class RhythmSyncSystem : MonoBehaviour
         float result = Mathf.Sin(currentBeat * 360 * Mathf.Deg2Rad);
         return result;
     }
-
-    private void Update()
+    public float GetAbsBeatTime()
     {
-        Debug.Log("Beat Time: " + GetBeatTime());
+        return Mathf.Abs(GetBeatTime());
     }
 }
