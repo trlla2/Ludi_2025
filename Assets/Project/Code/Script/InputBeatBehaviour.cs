@@ -1,16 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputBeatBehaviour : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Botones")]
+    [SerializeField]
+    private List<Button> rhythmButtons = new List<Button>(4);
+    
 }
