@@ -30,13 +30,16 @@ public class RhythmGameManager : MonoBehaviour
 
     [Header("Points")]
     [SerializeField]
-    private uint excellentPoints = 100;
+    private int excellentPoints = 100;
     [SerializeField]
-    private uint greatPoints = 50;
+    private int greatPoints = 50;
     [SerializeField]
-    private uint goodPoints = 20;
+    private int goodPoints = 20;
 
     private int score = 0;
+
+    public delegate void GetButtonHit(int acuracy);// 0 = bad, 1 = good, 2 = great, 3 = excellent
+    public event GetButtonHit OnButtonHit;
 
 
     private RhythmSyncSystem currentRhythmSystem;
@@ -60,18 +63,26 @@ public class RhythmGameManager : MonoBehaviour
         if (GetBeatTime() < excellentWindow && GetBeatTime() > -excellentWindow)
         {
             Debug.Log("Excellent");
+            score += excellentPoints;
+            OnButtonHit.Invoke(3);
         }
         else if (GetBeatTime() < greatWindow && GetBeatTime() > -greatWindow)
         {
             Debug.Log("Great");
+            score += greatPoints;
+            OnButtonHit.Invoke(2);
+
         }
         else if (GetBeatTime() < goodWindow && GetBeatTime() > -goodWindow)
         {
             Debug.Log("Good");
+            score += goodPoints;
+            OnButtonHit.Invoke(1);
         }
         else
         {
             Debug.Log("BaD");
+            OnButtonHit.Invoke(0);
         }
     }
 
