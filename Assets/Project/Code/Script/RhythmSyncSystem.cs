@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class RhythmSyncSystem : MonoBehaviour
@@ -36,6 +37,14 @@ public class RhythmSyncSystem : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(musicSource.time >= musicSource.clip.length)
+        {
+            RhythmGameManager.Instance.SongEnded();
+        }
+    }
+
     private void OnDestroy()
     {
         if (RhythmGameManager.Instance != null)
@@ -58,4 +67,5 @@ public class RhythmSyncSystem : MonoBehaviour
     {
         return Mathf.Abs(GetBeatTime());
     }
+
 }

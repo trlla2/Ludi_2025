@@ -96,6 +96,11 @@ public class RhythmGameManager : MonoBehaviour
     {
         currentRhythmSystem = null;
     }
+
+    public void SongEnded()
+    {
+        Application.Quit();
+    }
     public float GetBeatTime() 
     { 
         return currentRhythmSystem.GetBeatTime();
