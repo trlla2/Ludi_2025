@@ -1,10 +1,24 @@
+using System.Collections;
 using UnityEngine;
+
+public enum InstrumentType
+{
+    ELECTRIC_GUITAR,
+    ACOUSTICGUITAR,
+    BASS,
+    DRUMS,
+    CAJON,
+    PALMAS,
+    PIANO,
+    MICROPHONE
+}
 
 public class Instrument : MonoBehaviour
 {
     private Collider2D collision;
     private Vector3 startDragPosition;
-    private DropArea currentDropArea;
+    [SerializeField] private DropArea currentDropArea;
+    [SerializeField] private InstrumentType type;
 
     private void Start()
     {
@@ -18,7 +32,7 @@ public class Instrument : MonoBehaviour
         if (currentDropArea != null)
         {
             currentDropArea.Clear();
-            currentDropArea = null;
+            //currentDropArea = null;
         }
     }
 
@@ -31,11 +45,11 @@ public class Instrument : MonoBehaviour
     {
         collision.enabled = false;
         Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
-        collision.enabled = true;
+        StartCoroutine(RestoreColliderNextFrame());
 
         if (hitCollider != null && hitCollider.TryGetComponent(out DropArea instrumentDropArea) && !instrumentDropArea.isOccupied)
         {
-            instrumentDropArea.OnInstrumentDrop(this.gameObject);
+            instrumentDropArea.OnInstrumentDrop(this);
             currentDropArea = instrumentDropArea;
         }
         else
@@ -51,5 +65,13 @@ public class Instrument : MonoBehaviour
 
         return mousePos;
     }
+
+    private IEnumerator RestoreColliderNextFrame()
+    {
+        yield return null;
+        collision.enabled = true;
+    }
+
+    public InstrumentType GetInstrumentType() { return type; }
 
 }
