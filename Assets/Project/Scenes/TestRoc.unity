@@ -545,7 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idle: {r: 1, g: 1, b: 1, a: 1}
   beatHit: {r: 1, g: 0, b: 0, a: 1}
-  hitDuration: 0.3
+  hitDuration: 0.4
 --- !u!1 &888853263
 GameObject:
   m_ObjectHideFlags: 0
