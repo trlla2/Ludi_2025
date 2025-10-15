@@ -13,12 +13,17 @@ public class InputBeatBehaviour : MonoBehaviour
 
     [Header("Timing Config")]
     [SerializeField]
-    [Range(0f, 1f)]
-    private float hitWindow = 0.98f;
+    [Range(0f, 4f)]
+    private float hitWindow = 0.5f;
+    [SerializeField]
+    [Range(0f, 4f)]
+    private float earlyActivationWindow = 0.5f;
 
 
-    private float beatDetectionThreshold = 0.1f;
+
     private int currentActiveButton = -1; // -1 = No active buttons
+    private bool wasNegative = false;
+    private float beatActivationTime = -1f;
     private float lastBeatValue = 0f;
     private bool beatTriggered = false;
 
@@ -47,26 +52,19 @@ public class InputBeatBehaviour : MonoBehaviour
     }
     private void DetectBeat()
     {
-        float currentBeatValue = RhythmGameManager.Instance.GetAbsBeatTime();
+        float currentBeatValue = RhythmGameManager.Instance.GetBeatTime();
 
-        if (lastBeatValue > beatDetectionThreshold && currentBeatValue <= beatDetectionThreshold && !beatTriggered)
+        if (currentBeatValue < earlyActivationWindow && currentBeatValue > -hitWindow && currentActiveButton < 0)
         {
-            Debug.Log("NewBeat");
             TriggerNewButton();
-            beatTriggered = true;
         }
-
-        if(currentBeatValue > hitWindow)
+        else if (currentBeatValue > earlyActivationWindow || currentBeatValue < -hitWindow)
         {
             UntriggerButton();
         }
 
-        if (currentBeatValue > 0.5f)
-        {
-            beatTriggered = false;
-        }
-
         lastBeatValue = currentBeatValue;
+
     }
 
     private void TriggerNewButton()
@@ -93,7 +91,8 @@ public class InputBeatBehaviour : MonoBehaviour
     {
         Debug.Log("Clicked");
         RhythmGameManager.Instance.GetButtonsPressed(20);
+        UntriggerButton();
     }
-    
+
 
 }

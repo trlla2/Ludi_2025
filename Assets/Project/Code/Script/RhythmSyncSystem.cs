@@ -12,12 +12,23 @@ public class RhythmSyncSystem : MonoBehaviour
     float initialDelay = 0.0f;
 
     [SerializeField]
+    private bool halfTime = true; 
+
+    [SerializeField]
     private AudioSource musicSource;
 
     
     private void Start()
     {
-        beatTime = 60.0f / bpm; // beats/second
+        if (halfTime)
+        {
+            beatTime = 60.0f / (bpm * 0.5f); // beats/second
+
+        }
+        else
+        {
+            beatTime = 60.0f / bpm; // beats/second
+        }
 
         if (RhythmGameManager.Instance != null)
         {

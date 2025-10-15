@@ -16,10 +16,7 @@ public class RhythmGameManager : MonoBehaviour
         }
     }
 
-    [Header("SETUP")]
-
-    [Header("")]
-    [SerializeField]
+    
 
 
     private RhythmSyncSystem currentRhythmSystem;

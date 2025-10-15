@@ -1594,7 +1594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449c317b5dfe136449db81b75d73274e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRhythmSystem: {fileID: 1847952547}
 --- !u!4 &1920142727
 Transform:
   m_ObjectHideFlags: 0
@@ -1788,7 +1787,8 @@ MonoBehaviour:
   - {fileID: 888853265}
   - {fileID: 1528684532}
   - {fileID: 111842293}
-  hitWindow: 0.999
+  hitWindow: 0.5
+  earlyActivationWindow: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
