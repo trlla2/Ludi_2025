@@ -10,7 +10,11 @@ public enum InstrumentType
     CAJON,
     PALMAS,
     PIANO,
-    MICROPHONE
+    MICROPHONE,
+    BONGOS,
+    FLUTE,
+    VIOLIN,
+    HARMONICA
 }
 
 public class Instrument : MonoBehaviour
@@ -53,7 +57,7 @@ public class Instrument : MonoBehaviour
         }
         else
         {
-            transform.position = startDragPosition;
+            SetPositionToStartingDragPosition();
         }
     }
 
@@ -69,6 +73,11 @@ public class Instrument : MonoBehaviour
     {
         yield return null;
         collision.enabled = true;
+    }
+
+    public void SetPositionToStartingDragPosition()
+    {
+        transform.position = startDragPosition;
     }
 
     public InstrumentType GetInstrumentType() { return type; }
