@@ -4,6 +4,10 @@ public class DropArea : MonoBehaviour
 {
     [SerializeField] protected GameObject currentInstrument;
     public bool isOccupied => currentInstrument;
+    private void Update()
+    {
+        Debug.Log(isOccupied + this.gameObject.name);
+    }
 
     public virtual void OnInstrumentDrop(Instrument instrument)
     {
@@ -17,4 +21,6 @@ public class DropArea : MonoBehaviour
     {
         currentInstrument = null;
     }
+
+    public void SetCurrentInstrument(GameObject instrument) { currentInstrument = instrument; }
 }

@@ -18,7 +18,7 @@ public class StageDropArea : DropArea
         }
         else
         {
-            instrument.SetPositionToStartingDragPosition();
+            instrument.SetPositionToCurrentDropAreaPosition();
             OnBadDrop.Invoke();
         }
     }

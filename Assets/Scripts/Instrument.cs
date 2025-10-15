@@ -20,7 +20,7 @@ public enum InstrumentType
 public class Instrument : MonoBehaviour
 {
     private Collider2D collision;
-    private Vector3 startDragPosition;
+    private DropArea lastDropArea;
     [SerializeField] private DropArea currentDropArea;
     [SerializeField] private InstrumentType type;
 
@@ -31,10 +31,11 @@ public class Instrument : MonoBehaviour
 
     private void OnMouseDown()
     {
-        startDragPosition = transform.position;
+        //startDragPosition = transform.position;
         //transform.position = GetMousePositionInWorldSpace();
         if (currentDropArea != null)
         {
+            lastDropArea = currentDropArea;
             currentDropArea.Clear();
         }
     }
@@ -46,18 +47,25 @@ public class Instrument : MonoBehaviour
 
     private void OnMouseUp()
     {
-        collision.enabled = false;
-        Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
-        StartCoroutine(RestoreColliderNextFrame());
+        if (collision.enabled)
+        {
+            collision.enabled = false;
+            Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
+            //StartCoroutine(RestoreColliderNextFrame());
+            collision.enabled = true;
 
-        if (hitCollider != null && hitCollider.TryGetComponent(out DropArea instrumentDropArea) && !instrumentDropArea.isOccupied)
-        {
-            instrumentDropArea.OnInstrumentDrop(this);
-            currentDropArea = instrumentDropArea;
-        }
-        else
-        {
-            SetPositionToStartingDragPosition();
+            if (hitCollider != null && hitCollider.TryGetComponent(out DropArea instrumentDropArea) && !instrumentDropArea.isOccupied)
+            {
+                instrumentDropArea.OnInstrumentDrop(this);
+                currentDropArea = instrumentDropArea;
+            }
+            else
+            {
+                currentDropArea = lastDropArea;
+                currentDropArea.SetCurrentInstrument(this.gameObject);
+                SetPositionToCurrentDropAreaPosition();
+                //SetPositionToStartingDragPosition();
+            }
         }
     }
 
@@ -75,9 +83,9 @@ public class Instrument : MonoBehaviour
         collision.enabled = true;
     }
 
-    public void SetPositionToStartingDragPosition()
+    public void SetPositionToCurrentDropAreaPosition()
     {
-        transform.position = startDragPosition;
+        transform.position = currentDropArea.transform.position;
     }
 
     public InstrumentType GetInstrumentType() { return type; }
