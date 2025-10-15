@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,7 +28,7 @@ public class InputBeatBehaviour : MonoBehaviour
         foreach(Button b in rhythmButtons)
         {
             b.interactable = false;
-            b.onClick.AddListener(OnButtonClick);
+            b.onClick.AddListener(ButtonDown);
 
         }
     }
@@ -35,16 +36,10 @@ public class InputBeatBehaviour : MonoBehaviour
     private void Update()
     {
         DetectBeat();
-    }
-    private void OnDestroy()
-    {
-        foreach (Button b in rhythmButtons)
-        {
-            b.interactable = false;
-            b.onClick.RemoveListener(OnButtonClick);
 
-        }
+        InputKeyboardUpdate();
     }
+    
     private void DetectBeat()
     {
         float currentBeatValue = RhythmGameManager.Instance.GetBeatTime();
@@ -60,6 +55,37 @@ public class InputBeatBehaviour : MonoBehaviour
         }
     }
 
+    private void InputKeyboardUpdate()
+    {
+        switch (currentActiveButton) {
+            case 0:
+                if(Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    ButtonDown();
+                }
+                break;
+            case 1:
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    ButtonDown();
+                }
+                break;
+            case 2:
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    ButtonDown();
+                }
+                break;
+            case 3:
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    ButtonDown();
+                }
+                break;
+            default:
+                break;
+            }
+    }
     private void TriggerNewButton()
     {
         UntriggerButton();
@@ -79,7 +105,7 @@ public class InputBeatBehaviour : MonoBehaviour
         }
     }
 
-    private void OnButtonClick()
+    private void ButtonDown()
     {
         buttonPressed = true;
      
@@ -88,5 +114,13 @@ public class InputBeatBehaviour : MonoBehaviour
         UntriggerButton();
     }
 
+    private void OnDestroy()
+    {
+        foreach (Button b in rhythmButtons)
+        {
+            b.interactable = false;
+            b.onClick.RemoveListener(ButtonDown);
 
+        }
+    }
 }
