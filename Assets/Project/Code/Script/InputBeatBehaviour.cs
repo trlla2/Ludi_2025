@@ -109,7 +109,7 @@ public class InputBeatBehaviour : MonoBehaviour
     {
         buttonPressed = true;
      
-        RhythmGameManager.Instance.GetButtonsPressed();
+        RhythmGameManager.Instance.ButtonsPressed();
         
         UntriggerButton();
     }

@@ -8,11 +8,13 @@ public class CompasBehviour : MonoBehaviour
     [SerializeField]
     private Color idle;
     [SerializeField]
-    private Color beatHit;
-
+    private Color excellentHit;
     [SerializeField]
-    [Range(0f,1f)]
-    private float hitDuration = 0.6f;
+    private Color greatHit;
+    [SerializeField]
+    private Color goodHit;
+
+    
     void Start()
     {
         img = GetComponent<Image>();
@@ -21,11 +23,21 @@ public class CompasBehviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        img.GetComponent<RectTransform>().localScale = Vector3.one * (1.0f + 0.5f * RhythmGameManager.Instance.GetAbsBeatTime());
+        float currentBeatTime = RhythmGameManager.Instance.GetAbsBeatTime();
 
-        if(RhythmGameManager.Instance.GetAbsBeatTime() < hitDuration && RhythmGameManager.Instance.GetAbsBeatTime() > -hitDuration)
+        img.GetComponent<RectTransform>().localScale = Vector3.one * (1.0f + 0.5f * currentBeatTime);
+
+        if(currentBeatTime < RhythmGameManager.Instance.GetExcelentWindowTime() && currentBeatTime > -RhythmGameManager.Instance.GetExcelentWindowTime())
         {
-            img.color = beatHit;
+            img.color = excellentHit;
+        }
+        else if(currentBeatTime < RhythmGameManager.Instance.GetGreatWindowTime() && currentBeatTime > -RhythmGameManager.Instance.GetGreatWindowTime())
+        {
+            img.color = greatHit;
+        }
+        else if(currentBeatTime < RhythmGameManager.Instance.GetGoodWindowTime() && currentBeatTime > -RhythmGameManager.Instance.GetGoodWindowTime())
+        {
+            img.color = goodHit;
         }
         else
         {

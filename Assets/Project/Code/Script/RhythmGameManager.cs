@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class RhythmGameManager : MonoBehaviour
 {
@@ -27,6 +28,15 @@ public class RhythmGameManager : MonoBehaviour
     [Range(0f, 1f)]
     private float goodWindow = 0.7f;
 
+    [Header("Points")]
+    [SerializeField]
+    private uint excellentPoints = 100;
+    [SerializeField]
+    private uint greatPoints = 50;
+    [SerializeField]
+    private uint goodPoints = 20;
+
+    private int score = 0;
 
 
     private RhythmSyncSystem currentRhythmSystem;
@@ -44,27 +54,7 @@ public class RhythmGameManager : MonoBehaviour
         }
     }
 
-    public void RegisterRhythmSystem(RhythmSyncSystem rhythmSystem)
-    {
-        currentRhythmSystem = rhythmSystem;
-        Debug.Log("RhythmSyncSystem registrado en GameManager");
-    }
-
-    public void UnregisterRhythmSystem()
-    {
-        currentRhythmSystem = null;
-    }
-    public float GetBeatTime() 
-    { 
-        return currentRhythmSystem.GetBeatTime();
-    }
-
-    public float GetAbsBeatTime()
-    {
-        return currentRhythmSystem.GetAbsBeatTime();
-    }
-
-    public void GetButtonsPressed()
+    public void ButtonsPressed()
     {
         Debug.Log(GetBeatTime());
         if (GetBeatTime() < excellentWindow && GetBeatTime() > -excellentWindow)
@@ -84,6 +74,41 @@ public class RhythmGameManager : MonoBehaviour
             Debug.Log("BaD");
         }
     }
+
+    public void RegisterRhythmSystem(RhythmSyncSystem rhythmSystem)
+    {
+        currentRhythmSystem = rhythmSystem;
+        Debug.Log("RhythmSyncSystem registred");
+    }
+
+    public void UnregisterRhythmSystem()
+    {
+        currentRhythmSystem = null;
+    }
+    public float GetBeatTime() 
+    { 
+        return currentRhythmSystem.GetBeatTime();
+    }
+
+    public float GetAbsBeatTime()
+    {
+        return currentRhythmSystem.GetAbsBeatTime();
+    }
+    public float GetExcelentWindowTime()
+    {
+        return excellentWindow;
+    }
+    public float GetGreatWindowTime()
+    {
+        return greatWindow;
+    }
+    public float GetGoodWindowTime()
+    {
+        return goodWindow;
+    }
+    
+
+    
 }
 
 
