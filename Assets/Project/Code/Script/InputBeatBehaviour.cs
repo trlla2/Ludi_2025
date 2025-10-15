@@ -17,7 +17,7 @@ public class InputBeatBehaviour : MonoBehaviour
     private float hitWindow = 0.9f;
     
 
-
+    private bool buttonPressed = false;
 
     private int currentActiveButton = -1; // -1 = No active buttons
   
@@ -49,13 +49,14 @@ public class InputBeatBehaviour : MonoBehaviour
     {
         float currentBeatValue = RhythmGameManager.Instance.GetBeatTime();
 
-        if (currentBeatValue < hitWindow && currentBeatValue > -hitWindow && currentActiveButton < 0)
+        if (currentBeatValue < hitWindow && currentBeatValue > -hitWindow && currentActiveButton < 0 && !buttonPressed)
         {
             TriggerNewButton();
         }
         else if (currentBeatValue > hitWindow || currentBeatValue < -hitWindow)
         {
             UntriggerButton();
+            buttonPressed = false;
         }
     }
 
@@ -75,16 +76,16 @@ public class InputBeatBehaviour : MonoBehaviour
         {
             rhythmButtons[currentActiveButton].interactable = false;
             currentActiveButton = -1;
-
         }
     }
 
     private void OnButtonClick()
     {
-        Debug.Log("Clicked");
+        buttonPressed = true;
+     
         RhythmGameManager.Instance.GetButtonsPressed();
+        
         UntriggerButton();
-
     }
 
 
