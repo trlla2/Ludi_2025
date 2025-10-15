@@ -15,8 +15,18 @@ public class RhythmGameManager : MonoBehaviour
             return instance;
         }
     }
-
+    [Header("SETUP")]
     
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float excellentWindow = 0.2f;
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float greatWindow = 0.5f;
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float goodWindow = 0.7f;
+
 
 
     private RhythmSyncSystem currentRhythmSystem;
@@ -54,9 +64,25 @@ public class RhythmGameManager : MonoBehaviour
         return currentRhythmSystem.GetAbsBeatTime();
     }
 
-    public void GetButtonsPressed(int points)
+    public void GetButtonsPressed()
     {
-        Debug.Log(points + " points added");
+        Debug.Log(GetBeatTime());
+        if (GetBeatTime() < excellentWindow && GetBeatTime() > -excellentWindow)
+        {
+            Debug.Log("Excellent");
+        }
+        else if (GetBeatTime() < greatWindow && GetBeatTime() > -greatWindow)
+        {
+            Debug.Log("Great");
+        }
+        else if (GetBeatTime() < goodWindow && GetBeatTime() > -goodWindow)
+        {
+            Debug.Log("Good");
+        }
+        else
+        {
+            Debug.Log("BaD");
+        }
     }
 }
 
