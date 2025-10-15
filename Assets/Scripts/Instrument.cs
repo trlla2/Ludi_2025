@@ -32,7 +32,6 @@ public class Instrument : MonoBehaviour
         if (currentDropArea != null)
         {
             currentDropArea.Clear();
-            //currentDropArea = null;
         }
     }
 

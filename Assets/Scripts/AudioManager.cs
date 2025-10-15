@@ -7,15 +7,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private GameObject audioContainer;
     [SerializeField] private AudioSource[] instrumentsList;
 
-    /*private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }*/
-
     void Start()
     {
         instrumentsList = audioContainer.GetComponentsInChildren<AudioSource>();
@@ -35,12 +26,5 @@ public class AudioManager : MonoBehaviour
             StartPlaying();
 
         audio.mute = false;
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
