@@ -1848,7 +1848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff7d81f1ecedd947bbc0f954255ba33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 72
+  bpm: 66
   initialDelay: 0
   halfTime: 1
   musicSource: {fileID: 1847952549}
@@ -1878,7 +1878,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 6bcd621111c8e4843b13666a6ab542bc, type: 3}
+  m_Resource: {fileID: 8300000, guid: ea6e9929c1dfce5408c37e44567e91c0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
