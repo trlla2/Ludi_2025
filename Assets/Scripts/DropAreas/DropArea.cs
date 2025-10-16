@@ -6,15 +6,14 @@ public class DropArea : MonoBehaviour
     public bool isOccupied => currentInstrument;
     private void Update()
     {
-        Debug.Log(isOccupied + this.gameObject.name);
+        //Debug.Log(isOccupied + this.gameObject.name);
     }
 
     public virtual void OnInstrumentDrop(Instrument instrument)
     {
-        currentInstrument = instrument.gameObject;
+        SetCurrentInstrument(instrument.gameObject);
         instrument.gameObject.transform.position = transform.position;
-
-        
+        instrument.SetCurrentDropArea(this);
     }
 
     public void Clear()
@@ -22,5 +21,9 @@ public class DropArea : MonoBehaviour
         currentInstrument = null;
     }
 
-    public void SetCurrentInstrument(GameObject instrument) { currentInstrument = instrument; }
+    public void SetCurrentInstrument(GameObject instrument) 
+    { 
+        if(currentInstrument == null)
+            currentInstrument = instrument; 
+    }
 }
