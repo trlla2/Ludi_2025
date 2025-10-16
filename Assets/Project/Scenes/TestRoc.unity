@@ -2193,10 +2193,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDisapearText: 3
-  excellentHit: {r: 0, g: 0, b: 0, a: 0}
-  greatHit: {r: 0, g: 0, b: 0, a: 0}
-  goodHit: {r: 0, g: 0, b: 0, a: 0}
-  badHit: {r: 0, g: 0, b: 0, a: 0}
+  excellentHit: {r: 0.4317948, g: 0, b: 0.7169812, a: 1}
+  greatHit: {r: 0, g: 0.05733148, b: 0.9811321, a: 1}
+  goodHit: {r: 0.018116713, g: 1, b: 0, a: 1}
+  badHit: {r: 1, g: 0, b: 0, a: 1}
 --- !u!222 &1870849868
 CanvasRenderer:
   m_ObjectHideFlags: 0
