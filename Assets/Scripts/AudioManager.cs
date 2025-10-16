@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class AudioManager : MonoBehaviour
 {
-    //public static AudioManager instance;
+    public static AudioManager _instance { get; private set; }
 
     [SerializeField] private GameObject audioContainer;
     [SerializeField] private AudioSource[] instrumentsList;
@@ -11,6 +11,19 @@ public class AudioManager : MonoBehaviour
     public UnityEvent OnAllInstrumentsPlaying;
 
     private int instrumentsPlaying = 0;
+
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(audioContainer);
+    }
 
     void Start()
     {
@@ -34,7 +47,6 @@ public class AudioManager : MonoBehaviour
         instrumentsPlaying++;
 
         if (instrumentsPlaying >= 4)
-            Debug.Log("All Instruments Playing");
-            //OnAllInstrumentsPlaying.Invoke();
+            OnAllInstrumentsPlaying.Invoke();
     }
 }

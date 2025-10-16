@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (_instance != null)
         {
-            DontDestroyOnLoad(this.gameObject);
+            Destroy(this.gameObject);
             return;
         }
 
