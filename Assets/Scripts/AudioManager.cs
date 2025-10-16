@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AudioManager : MonoBehaviour
 {
@@ -6,6 +7,10 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private GameObject audioContainer;
     [SerializeField] private AudioSource[] instrumentsList;
+
+    public UnityEvent OnAllInstrumentsPlaying;
+
+    private int instrumentsPlaying = 0;
 
     void Start()
     {
@@ -26,5 +31,10 @@ public class AudioManager : MonoBehaviour
             StartPlaying();
 
         audio.mute = false;
+        instrumentsPlaying++;
+
+        if (instrumentsPlaying >= 4)
+            Debug.Log("All Instruments Playing");
+            //OnAllInstrumentsPlaying.Invoke();
     }
 }

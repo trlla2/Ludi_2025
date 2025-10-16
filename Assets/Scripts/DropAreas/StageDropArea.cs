@@ -13,11 +13,13 @@ public class StageDropArea : DropArea
         if (instrument.GetInstrumentType() == requiredInstrumentType)
         {
             currentInstrument = instrument.gameObject;
+            instrument.SetCurrentDropArea(this);
             instrument.gameObject.transform.position = transform.position;
             OnGoodDrop.Invoke();
         }
         else
         {
+            instrument.SetCurrentDropArea(instrument.GetLastDropArea());
             instrument.SetPositionToCurrentDropAreaPosition();
             OnBadDrop.Invoke();
         }
