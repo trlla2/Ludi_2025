@@ -11,6 +11,8 @@ public class MainMenuBehaviour : MonoBehaviour
     private GameObject configPanel;
     [SerializeField]
     private GameObject creditsPanel;
+    [SerializeField]
+    private GameObject levelSelectorPanel;
 
     [Header("AudioMixer")]
     [SerializeField]
@@ -22,27 +24,42 @@ public class MainMenuBehaviour : MonoBehaviour
     [SerializeField]
     private Slider musicSlider;
 
-    public void OnPlay()
+    private void Start()
     {
 
+        mainMenuPanel.SetActive(true);
+        configPanel.SetActive(false);
+        creditsPanel.SetActive(false);
+        levelSelectorPanel.SetActive(false);
+    }
+
+    public void OnPlay()
+    {
+        mainMenuPanel.SetActive(false);
+        configPanel.SetActive(false);
+        creditsPanel.SetActive(false);
+        levelSelectorPanel.SetActive(true);
     }
     public void OnConfig()
     {
         mainMenuPanel.SetActive(false);
         configPanel.SetActive(true);
         creditsPanel.SetActive(false);
+        levelSelectorPanel.SetActive(false);
     }
-    public void IOnCredits()
+    public void OnCredits()
     {
         mainMenuPanel.SetActive(false);
         configPanel.SetActive(false);
         creditsPanel.SetActive(true);
+        levelSelectorPanel.SetActive(false);
     }
     public void OnBack()
     {
         mainMenuPanel.SetActive(true);
         configPanel.SetActive(false);
         creditsPanel.SetActive(false);
+        levelSelectorPanel.SetActive(false);
     }
     public void SetVolume()
     {
