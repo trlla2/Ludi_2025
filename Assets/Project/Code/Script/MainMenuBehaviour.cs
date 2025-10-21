@@ -61,6 +61,16 @@ public class MainMenuBehaviour : MonoBehaviour
         creditsPanel.SetActive(false);
         levelSelectorPanel.SetActive(false);
     }
+
+    public void OnPlayLVL1()
+    {
+        // Load LVL 1
+    }
+    public void OnPlayLVL2()
+    {
+        // Load LVL 2
+    }
+
     public void SetVolume()
     {
         audioMixer.SetFloat("VolumeMaster", Mathf.Log10(mainSlider.value) * 20);
