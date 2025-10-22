@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuBehaviour : MonoBehaviour
@@ -64,7 +65,7 @@ public class MainMenuBehaviour : MonoBehaviour
 
     public void OnPlayLVL1()
     {
-        // Load LVL 1
+        SceneManager.LoadScene("BeatMakerSceneTest");
     }
     public void OnPlayLVL2()
     {
