@@ -41,6 +41,8 @@ public class RhythmGameManager : MonoBehaviour
     public delegate void GetButtonHit(int acuracy);// 0 = bad, 1 = good, 2 = great, 3 = excellent
     public event GetButtonHit OnButtonHit;
 
+    public delegate void GetScoreChange(int s);
+    public event GetScoreChange OnScoreChange;
 
     private RhythmSyncSystem currentRhythmSystem;
 
@@ -59,31 +61,30 @@ public class RhythmGameManager : MonoBehaviour
 
     public void ButtonsPressed()
     {
-        Debug.Log(GetBeatTime());
+        
         if (GetBeatTime() < excellentWindow && GetBeatTime() > -excellentWindow)
         {
-            Debug.Log("Excellent");
             score += excellentPoints;
-            OnButtonHit.Invoke(3);
+            OnButtonHit?.Invoke(3);
+            OnScoreChange?.Invoke(score);
         }
         else if (GetBeatTime() < greatWindow && GetBeatTime() > -greatWindow)
         {
-            Debug.Log("Great");
             score += greatPoints;
-            OnButtonHit.Invoke(2);
-
+            OnButtonHit?.Invoke(2);
+            OnScoreChange?.Invoke(score);
         }
         else if (GetBeatTime() < goodWindow && GetBeatTime() > -goodWindow)
         {
-            Debug.Log("Good");
             score += goodPoints;
-            OnButtonHit.Invoke(1);
+            OnButtonHit?.Invoke(1);
+            OnScoreChange?.Invoke(score);
         }
         else
         {
-            Debug.Log("BaD");
-            OnButtonHit.Invoke(0);
+            OnButtonHit?.Invoke(0);
         }
+        Debug.Log("Score " + score);
     }
 
     public void RegisterRhythmSystem(RhythmSyncSystem rhythmSystem)
@@ -99,6 +100,10 @@ public class RhythmGameManager : MonoBehaviour
 
     public void SongEnded()
     {
+        if(PlayerPrefs.GetInt("lvl1Score",0) < score)
+        {
+            PlayerPrefs.SetInt("lvl1Score", score);
+        }
         Application.Quit();
     }
     public float GetBeatTime() 
