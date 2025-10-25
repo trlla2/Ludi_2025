@@ -1477,7 +1477,7 @@ Camera:
   m_GameObject: {fileID: 1813270416}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1566,7 +1566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bpm: 66
   initialDelay: 0
-  halfTime: 1
+  easyMode: 1
   musicSource: {fileID: 1847952549}
 --- !u!4 &1847952548
 Transform:
@@ -1909,7 +1909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDisapearText: 3
-  excellentHit: {r: 0.4317948, g: 0, b: 0.7169812, a: 1}
+  excellentHit: {r: 1, g: 0, b: 0.9735141, a: 1}
   greatHit: {r: 0, g: 0.05733148, b: 0.9811321, a: 1}
   goodHit: {r: 0.018116713, g: 1, b: 0, a: 1}
   badHit: {r: 1, g: 0, b: 0, a: 1}
