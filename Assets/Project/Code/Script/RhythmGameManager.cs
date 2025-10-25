@@ -38,11 +38,16 @@ public class RhythmGameManager : MonoBehaviour
 
     private int score = 0;
 
+    private int errorCounter = 0;
+
     public delegate void GetButtonHit(int acuracy);// 0 = bad, 1 = good, 2 = great, 3 = excellent
     public event GetButtonHit OnButtonHit;
 
     public delegate void GetScoreChange(int s);
     public event GetScoreChange OnScoreChange;
+
+    public delegate void GetEndLevel();
+    public event GetEndLevel OnLevelEnd;
 
     private RhythmSyncSystem currentRhythmSystem;
 
@@ -57,6 +62,17 @@ public class RhythmGameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+    }
+
+    public void RegisterRhythmSystem(RhythmSyncSystem rhythmSystem)
+    {
+        currentRhythmSystem = rhythmSystem;
+        Debug.Log("RhythmSyncSystem registred");
+    }
+
+    public void UnregisterRhythmSystem()
+    {
+        currentRhythmSystem = null;
     }
 
     public void ButtonsPressed()
@@ -83,19 +99,15 @@ public class RhythmGameManager : MonoBehaviour
         else
         {
             OnButtonHit?.Invoke(0);
+            errorCounter++;
         }
         Debug.Log("Score " + score);
     }
 
-    public void RegisterRhythmSystem(RhythmSyncSystem rhythmSystem)
+    public void AddError()
     {
-        currentRhythmSystem = rhythmSystem;
-        Debug.Log("RhythmSyncSystem registred");
-    }
-
-    public void UnregisterRhythmSystem()
-    {
-        currentRhythmSystem = null;
+        OnButtonHit?.Invoke(0);
+        errorCounter++;
     }
 
     public void SongEnded()
@@ -104,31 +116,24 @@ public class RhythmGameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("lvl1Score", score);
         }
-        Application.Quit();
-    }
-    public float GetBeatTime() 
-    { 
-        return currentRhythmSystem.GetBeatTime();
+
+
+        OnLevelEnd.Invoke();
+
+        score = 0;
+        errorCounter = 0;
     }
 
-    public float GetAbsBeatTime()
-    {
-        return currentRhythmSystem.GetAbsBeatTime();
-    }
-    public float GetExcelentWindowTime()
-    {
-        return excellentWindow;
-    }
-    public float GetGreatWindowTime()
-    {
-        return greatWindow;
-    }
-    public float GetGoodWindowTime()
-    {
-        return goodWindow;
-    }
+    public float GetBeatTime()  {  return currentRhythmSystem.GetBeatTime(); }
+
+    public float GetAbsBeatTime() { return currentRhythmSystem.GetAbsBeatTime(); }
+    public float GetExcelentWindowTime() { return excellentWindow; }
+    public float GetGreatWindowTime() { return greatWindow; }
+    public float GetGoodWindowTime() { return goodWindow; }
     
+    public int GetErrorCount() { return errorCounter; }
 
+    public int GetScore() { return score; }
     
 }
 
