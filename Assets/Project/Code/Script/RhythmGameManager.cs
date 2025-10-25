@@ -38,6 +38,8 @@ public class RhythmGameManager : MonoBehaviour
 
     private int score = 0;
 
+    private int errorCounter = 0;
+
     public delegate void GetButtonHit(int acuracy);// 0 = bad, 1 = good, 2 = great, 3 = excellent
     public event GetButtonHit OnButtonHit;
 
@@ -83,6 +85,7 @@ public class RhythmGameManager : MonoBehaviour
         else
         {
             OnButtonHit?.Invoke(0);
+            errorCounter++;
         }
         Debug.Log("Score " + score);
     }

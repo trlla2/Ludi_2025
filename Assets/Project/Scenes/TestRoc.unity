@@ -1950,9 +1950,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449c317b5dfe136449db81b75d73274e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  excellentWindow: 0.3
-  greatWindow: 0.5
-  goodWindow: 0.7
+  excellentWindow: 0.2
+  greatWindow: 0.4
+  goodWindow: 0.6
   excellentPoints: 100
   greatPoints: 50
   goodPoints: 100
