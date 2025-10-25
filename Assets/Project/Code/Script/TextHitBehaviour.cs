@@ -62,19 +62,19 @@ public class TextHitBehaviour : MonoBehaviour
         switch (acuracy)
         {
             case 0:
-                tm.text = "Bad";
+                tm.text = "Malament";
                 tm.color = badHit;
                 break;
             case 1:
-                tm.text = "Good";
+                tm.text = "Bé";
                 tm.color = goodHit;
                 break;
             case 2:
-                tm.text = "Great";
+                tm.text = "Molt Bé";
                 tm.color = greatHit;
                 break;
             case 3:
-                tm.text = "Excellent";
+                tm.text = "Excelent";
                 tm.color = excellentHit;
                 excellentParticles.Play();
                 break;
@@ -117,7 +117,6 @@ public class TextHitBehaviour : MonoBehaviour
     {
         float interpolatedValue = currentAnimationTime / animationDuration;
         interpolatedValue = curve.Evaluate(interpolatedValue);
-        Debug.Log(interpolatedValue);
         rectTransform.localScale = originScale + (scale * interpolatedValue);
     }
 }

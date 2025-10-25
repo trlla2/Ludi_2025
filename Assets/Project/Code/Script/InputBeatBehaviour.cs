@@ -52,6 +52,11 @@ public class InputBeatBehaviour : MonoBehaviour
         }
         else if (currentBeatValue > hitWindow || currentBeatValue < -hitWindow)
         {
+            if (currentActiveButton >= 0)
+            {
+                RhythmGameManager.Instance.AddError();
+            }
+
             UntriggerButton();
             buttonPressed = false;
         }
