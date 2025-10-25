@@ -41,6 +41,10 @@ public class MainMenuBehaviour : MonoBehaviour
 
         lvl1MaxScoreText.text = "Puntuació Maxima: " + PlayerPrefs.GetInt("lvl1Score", 0).ToString();
         lvl2MaxScoreText.text = "Puntuació Maxima: " + PlayerPrefs.GetInt("lvl2Score", 0).ToString();
+
+        SetVolume();
+        SetVolumeMusic();
+        SetVolumeSFX();
     }
 
     public void OnPlay()
