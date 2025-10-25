@@ -6,6 +6,10 @@ public class ScoreBehaviour : MonoBehaviour
 {
     private TMP_Text tm;
 
+    [Header("SETUP")]
+    [SerializeField]
+    private ParticleSystem scoreParticles;
+
     private void Start()
     {
         tm = this.GetComponent<TMP_Text>();
@@ -14,6 +18,7 @@ public class ScoreBehaviour : MonoBehaviour
     private void ChangeScore(int score)
     {
        tm.text = score.ToString();
+       scoreParticles.Play();
     }
     private void OnDestroy()
     {
