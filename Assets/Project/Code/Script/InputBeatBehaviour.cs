@@ -11,6 +11,8 @@ public class InputBeatBehaviour : MonoBehaviour
     [Header("Buttons")]
     [SerializeField]
     private List<Button> rhythmButtons = new List<Button>(4);
+    [SerializeField]
+    private List<GhostButton> ghostButtons = new List<GhostButton>(4);
 
     [Header("Timing Config")]
     [SerializeField]
@@ -50,6 +52,11 @@ public class InputBeatBehaviour : MonoBehaviour
         }
         else if (currentBeatValue > hitWindow || currentBeatValue < -hitWindow)
         {
+            if (currentActiveButton >= 0)
+            {
+                RhythmGameManager.Instance.AddError();
+            }
+
             UntriggerButton();
             buttonPressed = false;
         }
@@ -93,6 +100,7 @@ public class InputBeatBehaviour : MonoBehaviour
         currentActiveButton = Random.Range(0, rhythmButtons.Count);
 
         rhythmButtons[currentActiveButton].interactable = true;
+        ghostButtons[currentActiveButton].Trigger(true);
     }
 
 
@@ -101,6 +109,8 @@ public class InputBeatBehaviour : MonoBehaviour
         if (currentActiveButton >= 0)
         {
             rhythmButtons[currentActiveButton].interactable = false;
+            ghostButtons[currentActiveButton].Trigger(false);
+
             currentActiveButton = -1;
         }
     }

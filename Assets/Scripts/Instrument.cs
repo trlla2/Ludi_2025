@@ -75,9 +75,14 @@ public class Instrument : MonoBehaviour
         return mousePos;
     }
 
+    public void SetPosition(Vector3 pos)
+    {
+        transform.position = new Vector3(pos.x, pos.y, transform.position.z);
+    }
+
     public void SetPositionToCurrentDropAreaPosition()
     {
-        transform.position = currentDropArea.transform.position;
+        transform.position = new Vector3(currentDropArea.transform.position.x, currentDropArea.transform.position.y, transform.position.z);
     }
 
     public void SetCurrentDropArea(DropArea dropArea)
