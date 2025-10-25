@@ -14,6 +14,8 @@ public class TextHitBehaviour : MonoBehaviour
     private float currentTimerToDisapear = 0;
     [SerializeField]
     private ParticleSystem excellentParticles;
+    [SerializeField]
+    private AudioSource errorHitSFX;
 
     [Header("Hit color")]
     [SerializeField]
@@ -64,6 +66,7 @@ public class TextHitBehaviour : MonoBehaviour
             case 0:
                 tm.text = "Malament";
                 tm.color = badHit;
+                errorHitSFX.Play();
                 break;
             case 1:
                 tm.text = "Bé";
