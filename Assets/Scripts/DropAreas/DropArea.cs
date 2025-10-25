@@ -12,7 +12,7 @@ public class DropArea : MonoBehaviour
     public virtual void OnInstrumentDrop(Instrument instrument)
     {
         SetCurrentInstrument(instrument.gameObject);
-        instrument.gameObject.transform.position = transform.position;
+        instrument.SetPosition(this.transform.position);
         instrument.SetCurrentDropArea(this);
     }
 

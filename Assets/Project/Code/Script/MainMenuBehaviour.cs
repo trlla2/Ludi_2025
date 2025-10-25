@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,11 @@ public class MainMenuBehaviour : MonoBehaviour
     private GameObject creditsPanel;
     [SerializeField]
     private GameObject levelSelectorPanel;
+    [Header(" -LevelSelection")]
+    [SerializeField]
+    private TMP_Text lvl1MaxScoreText;
+    [SerializeField]
+    private TMP_Text lvl2MaxScoreText;
 
     [Header("AudioMixer")]
     [SerializeField]
@@ -32,6 +38,13 @@ public class MainMenuBehaviour : MonoBehaviour
         configPanel.SetActive(false);
         creditsPanel.SetActive(false);
         levelSelectorPanel.SetActive(false);
+
+        lvl1MaxScoreText.text = "Puntuació Maxima: " + PlayerPrefs.GetInt("lvl1Score", 0).ToString();
+        lvl2MaxScoreText.text = "Puntuació Maxima: " + PlayerPrefs.GetInt("lvl2Score", 0).ToString();
+
+        SetVolume();
+        SetVolumeMusic();
+        SetVolumeSFX();
     }
 
     public void OnPlay()

@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2561,7 +2561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &948501596
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3192,7 +3192,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3626,7 +3626,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3752,6 +3752,8 @@ MonoBehaviour:
   configPanel: {fileID: 958840777}
   creditsPanel: {fileID: 1360838398}
   levelSelectorPanel: {fileID: 1778990144}
+  lvl1MaxScoreText: {fileID: 1735306105}
+  lvl2MaxScoreText: {fileID: 921827381}
   audioMixer: {fileID: 24100000, guid: 7b3b7d1a41c4a8343b173f7b88e81b9d, type: 2}
   mainSlider: {fileID: 1205773218}
   sfxSlider: {fileID: 1024675218}
@@ -4866,7 +4868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1778990145
 RectTransform:
   m_ObjectHideFlags: 0
