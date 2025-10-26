@@ -41,11 +41,29 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1196107911
+    locked: 0
+  - name: GenteLejos
+    uniqueID: 191207617
+    locked: 0
+  - name: Scenary
+    uniqueID: 3970928287
+    locked: 0
+  - name: GenteCerca
+    uniqueID: 397211453
+    locked: 0
   - name: DropAreas
     uniqueID: 3214295543
     locked: 0
   - name: Instruments
     uniqueID: 439945229
+    locked: 0
+  - name: Bafarades
+    uniqueID: 1351934867
+    locked: 0
+  - name: Canvas
+    uniqueID: 1542636873
     locked: 0
   m_RenderingLayers:
   - Default
