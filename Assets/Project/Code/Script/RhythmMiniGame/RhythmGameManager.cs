@@ -124,6 +124,7 @@ public class RhythmGameManager : MonoBehaviour
         errorCounter = 0;
     }
 
+    public void PauseSyncMusic() { currentRhythmSystem.PauseMusic();  }
     public float GetBeatTime()  {  return currentRhythmSystem.GetBeatTime(); }
 
     public float GetAbsBeatTime() { return currentRhythmSystem.GetAbsBeatTime(); }

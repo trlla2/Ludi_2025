@@ -78,4 +78,8 @@ public class RhythmSyncSystem : MonoBehaviour
         float result = Mathf.Sin(currentBeat * 360 * Mathf.Deg2Rad);
         return result;
     }
+    public void PauseMusic()
+    {
+        musicSource.Pause();
+    }
 }
