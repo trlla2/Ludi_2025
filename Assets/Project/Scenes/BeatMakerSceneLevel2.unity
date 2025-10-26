@@ -778,7 +778,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 818774161}
+  m_Father: {fileID: 614609032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &141795110
 AudioSource:
@@ -2643,6 +2643,39 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9190973387177138305, guid: afd3a8f1146341444a384a5006230124, type: 3}
   m_PrefabInstance: {fileID: 560166284}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &614609031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 614609032}
+  m_Layer: 0
+  m_Name: AudioSources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &614609032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614609031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.004628241, y: 0.14211078, z: 4.5477853}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1335501162}
+  - {fileID: 141795109}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &632229602
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,39 +3369,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleModifier: 0.1
   forceHardDance: 1
---- !u!1 &818774160
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 818774161}
-  m_Layer: 0
-  m_Name: AudioSources
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &818774161
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818774160}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.004628241, y: 0.14211078, z: 4.5477853}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1335501162}
-  - {fileID: 141795109}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &825335794
 GameObject:
   m_ObjectHideFlags: 0
@@ -5953,7 +5953,7 @@ Transform:
   - {fileID: 1024992241}
   - {fileID: 1159747714}
   - {fileID: 1809740605}
-  m_Father: {fileID: 818774161}
+  m_Father: {fileID: 614609032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1341133493 stripped
 GameObject:
@@ -10620,4 +10620,4 @@ SceneRoots:
   - {fileID: 2058205997}
   - {fileID: 1272760996}
   - {fileID: 701100379}
-  - {fileID: 818774161}
+  - {fileID: 614609032}
