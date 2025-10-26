@@ -82,4 +82,8 @@ public class RhythmSyncSystem : MonoBehaviour
     {
         musicSource.Pause();
     }
+    public void StartMusic()
+    {
+        musicSource.Play();
+    }
 }

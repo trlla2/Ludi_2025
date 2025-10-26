@@ -19,13 +19,16 @@ public class PauseMenu : MonoBehaviour
         pause = true;
         pausePanel.SetActive(true);
         Time.timeScale = 0;
-
+        RhythmGameManager.Instance.PauseSyncMusic();
+        AudioManager._instance.PauseMusic();
     }
     private void DisablePause()
     {
         pause = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1;
+        RhythmGameManager.Instance.StartSyncMusic();
+        AudioManager._instance.StartPlaying();
     }
 
     public void OnPauseButton()
@@ -42,6 +45,8 @@ public class PauseMenu : MonoBehaviour
 
     public void OnMenuButton()
     {
+        DisablePause();
+        AudioManager._instance.StopMusic();
         SceneManager.LoadScene("MainMenu");
     }
 
