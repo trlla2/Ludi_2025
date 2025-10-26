@@ -127,6 +127,7 @@ public class RhythmGameManager : MonoBehaviour
     public float GetBeatTime()  {  return currentRhythmSystem.GetBeatTime(); }
 
     public float GetAbsBeatTime() { return currentRhythmSystem.GetAbsBeatTime(); }
+    public float GetHardBeatTime() { return currentRhythmSystem.GetHardBeatTime(); }
     public float GetExcelentWindowTime() { return excellentWindow; }
     public float GetGreatWindowTime() { return greatWindow; }
     public float GetGoodWindowTime() { return goodWindow; }

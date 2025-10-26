@@ -8,6 +8,7 @@ public class RhythmSyncSystem : MonoBehaviour
     [SerializeField]
     private int bpm = 120;
     float beatTime = 0;
+    float hardBeatTime = 0;
 
     [SerializeField]
     float initialDelay = 0.0f;
@@ -21,15 +22,14 @@ public class RhythmSyncSystem : MonoBehaviour
     
     private void Start()
     {
-        if (easyMode)
-        {
-            beatTime = 60.0f / (bpm * 0.25f); // beats/second
+        
+        beatTime = 60.0f / (bpm * 0.25f); // beats/second
 
-        }
-        else
-        {
-            beatTime = 60.0f / (bpm * 0.5f); // beats/second
-        }
+       
+        hardBeatTime = 60.0f / (bpm * 0.5f); // beats/second
+
+        if (!easyMode)
+            beatTime = hardBeatTime;
 
         if (RhythmGameManager.Instance != null)
         {
@@ -68,4 +68,14 @@ public class RhythmSyncSystem : MonoBehaviour
         return Mathf.Abs(GetBeatTime());
     }
 
+    public float GetHardBeatTime()
+    {
+        float songTime = musicSource.time + initialDelay;
+
+        float currentBeat = songTime / hardBeatTime;
+
+
+        float result = Mathf.Sin(currentBeat * 360 * Mathf.Deg2Rad);
+        return result;
+    }
 }
