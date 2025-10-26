@@ -49,4 +49,12 @@ public class AudioManager : MonoBehaviour
         if (instrumentsPlaying >= 4)
             OnAllInstrumentsPlaying.Invoke();
     }
+
+    public void PauseMusic()
+    {
+        foreach (AudioSource audio in instrumentsList)
+        {
+            audio.Pause();
+        }
+    }
 }

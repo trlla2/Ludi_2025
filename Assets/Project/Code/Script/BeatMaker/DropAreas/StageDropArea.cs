@@ -10,15 +10,18 @@ public class StageDropArea : DropArea
 
     public override void OnInstrumentDrop(Instrument instrument) 
     {
+        
         if (instrument.GetInstrumentType() == requiredInstrumentType)
         {
             currentInstrument = instrument.gameObject;
             instrument.SetCurrentDropArea(this);
             instrument.gameObject.transform.position = transform.position;
             OnGoodDrop.Invoke();
+            
         }
         else
         {
+            Debug.Log(instrument.GetInstrumentType());
             instrument.SetCurrentDropArea(instrument.GetLastDropArea());
             instrument.SetPositionToCurrentDropAreaPosition();
             OnBadDrop.Invoke();
