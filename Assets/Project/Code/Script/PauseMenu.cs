@@ -45,9 +45,10 @@ public class PauseMenu : MonoBehaviour
 
     public void OnMenuButton()
     {
+        AudioManager._instance.KillAudioManager();
+        SceneManager.LoadScene(0);
         DisablePause();
-        AudioManager._instance.StopMusic();
-        SceneManager.LoadScene("MainMenu");
+
     }
 
     public void OnBackButton()
