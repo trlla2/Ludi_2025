@@ -45,7 +45,7 @@ public class AudioManager : MonoBehaviour
 
         audio.mute = false;
         instrumentsPlaying++;
-
+     
         if (instrumentsPlaying >= 4)
             OnAllInstrumentsPlaying.Invoke();
     }
@@ -57,11 +57,10 @@ public class AudioManager : MonoBehaviour
             audio.Pause();
         }
     }
-    public void StopMusic()
+
+    public void KillAudioManager()
     {
-        foreach (AudioSource audio in instrumentsList)
-        {
-            audio.Stop();
-        }
+        instrumentsPlaying = 0;
+        Destroy(this.gameObject);
     }
 }
