@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8e3172f2872c13045a78cd3f909499dd
+guid: aa66ec9b7c7707246b35197ba1142499
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2213181083714424201
-    second: LUDI_0001_Capa-21_0
+      213: -7733362558827268375
+    second: Credits-Bichos_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,40 +122,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LUDI_0001_Capa-21_0
+      name: Credits-Bichos_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 903
-        height: 184
+        width: 1653
+        height: 993
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7727691c7833941e0800000000000000
-      internalID: -2213181083714424201
+      spriteID: 9e67bc1d9b39da490800000000000000
+      internalID: -7733362558827268375
       vertices: []
       indices: 
       edges: []
@@ -164,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e4c5b09f72b57cb4ba1c8f3334f1c866
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LUDI_0001_Capa-21_0: -2213181083714424201
+      Credits-Bichos_0: -7733362558827268375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

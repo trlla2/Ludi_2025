@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
         instrumentsList = audioContainer.GetComponentsInChildren<AudioSource>();
     }
 
-    private void StartPlaying()
+    public void StartPlaying()
     {
         foreach (AudioSource audio in instrumentsList)
         {
@@ -55,6 +55,13 @@ public class AudioManager : MonoBehaviour
         foreach (AudioSource audio in instrumentsList)
         {
             audio.Pause();
+        }
+    }
+    public void StopMusic()
+    {
+        foreach (AudioSource audio in instrumentsList)
+        {
+            audio.Stop();
         }
     }
 
