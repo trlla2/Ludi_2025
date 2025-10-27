@@ -57,4 +57,9 @@ public class AudioManager : MonoBehaviour
             audio.Pause();
         }
     }
+
+    public void KillAudioManager()
+    {
+        Destroy(this.gameObject);
+    }
 }
