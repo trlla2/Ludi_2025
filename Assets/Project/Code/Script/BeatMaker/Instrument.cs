@@ -8,7 +8,7 @@ public enum InstrumentType
     BASS,
     DRUMS,
     CAJON,
-    PALMAS,
+    CASTANUELAS,
     PIANO,
     MICROPHONE,
     BONGOS,
