@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private GameObject audioContainer;
     [SerializeField] private AudioSource[] instrumentsList;
-
+    [SerializeField] private string rhythmScene;
     public UnityEvent OnAllInstrumentsPlaying;
 
     private int instrumentsPlaying = 0;
@@ -45,9 +45,11 @@ public class AudioManager : MonoBehaviour
 
         audio.mute = false;
         instrumentsPlaying++;
-     
         if (instrumentsPlaying >= 4)
-            OnAllInstrumentsPlaying.Invoke();
+        {
+            OnAllInstrumentsPlaying?.Invoke();
+            SceneLoader._instance?.ChangeScene(rhythmScene);
+        }
     }
 
     public void PauseMusic()

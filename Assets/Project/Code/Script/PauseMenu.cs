@@ -11,7 +11,8 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        DisablePause();
+        pause = false;
+        pausePanel.SetActive(false);
     }
 
     private void EnablePause()
@@ -27,8 +28,8 @@ public class PauseMenu : MonoBehaviour
         pause = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1;
-        RhythmGameManager.Instance.StartSyncMusic();
-        AudioManager._instance.StartPlaying();
+        RhythmGameManager.Instance?.StartSyncMusic();
+        AudioManager._instance?.StartPlaying();
     }
 
     public void OnPauseButton()
@@ -45,7 +46,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OnMenuButton()
     {
-        AudioManager._instance.KillAudioManager();
+        AudioManager._instance?.KillAudioManager();
         SceneManager.LoadScene(0);
         DisablePause();
 
