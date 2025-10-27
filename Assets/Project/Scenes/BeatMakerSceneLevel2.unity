@@ -911,8 +911,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.01, y: 0.01}
-  m_SizeDelta: {x: 100.0113, y: 52.2051}
+  m_AnchoredPosition: {x: 0.0304, y: 0.01}
+  m_SizeDelta: {x: 122.8709, y: 52.2051}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193127381
 MonoBehaviour:
@@ -936,15 +936,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: JO CANTO!!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6efefe385b56eff4b91a08ac487c80cb, type: 2}
+  m_sharedMaterial: {fileID: 4022978834354669514, guid: 6efefe385b56eff4b91a08ac487c80cb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -961,15 +961,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1047,8 +1047,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.02, y: -0.05}
-  m_SizeDelta: {x: 134.5909, y: 53.5266}
+  m_AnchoredPosition: {x: 0.003, y: -0.16}
+  m_SizeDelta: {x: 134.5909, y: 88.2526}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &201704308
 MonoBehaviour:
@@ -1072,15 +1072,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "TOCO LA GUITARRA AC\xDASTICA!!!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6efefe385b56eff4b91a08ac487c80cb, type: 2}
+  m_sharedMaterial: {fileID: 4022978834354669514, guid: 6efefe385b56eff4b91a08ac487c80cb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1097,8 +1097,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5482,8 +5482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.015, y: 0.006}
-  m_SizeDelta: {x: 104.5592, y: 55.7087}
+  m_AnchoredPosition: {x: -0.015, y: 0.1833}
+  m_SizeDelta: {x: 104.5592, y: 71.6501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176708286
 MonoBehaviour:
@@ -5507,15 +5507,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "TOCO EL CAJ\xD3N!!!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6efefe385b56eff4b91a08ac487c80cb, type: 2}
+  m_sharedMaterial: {fileID: 4022978834354669514, guid: 6efefe385b56eff4b91a08ac487c80cb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5532,8 +5532,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7419,8 +7419,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.016, y: -0.182}
-  m_SizeDelta: {x: 124.1362, y: 44.989}
+  m_AnchoredPosition: {x: -0.016, y: 0.0238}
+  m_SizeDelta: {x: 124.1362, y: 63.4957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704961657
 MonoBehaviour:
@@ -7444,15 +7444,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: TOCO LES CASTANYOLES!!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6efefe385b56eff4b91a08ac487c80cb, type: 2}
+  m_sharedMaterial: {fileID: 4022978834354669514, guid: 6efefe385b56eff4b91a08ac487c80cb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7469,8 +7469,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7568,6 +7568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioContainer: {fileID: 1335501161}
   instrumentsList: []
+  rhythmScene: 
   OnAllInstrumentsPlaying:
     m_PersistentCalls:
       m_Calls:
