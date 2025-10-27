@@ -33,7 +33,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    private void LoadWithChargeScene(string nameScene, string nameChargingScene)
+    public void LoadWithChargeScene(string nameScene, string nameChargingScene)
     {
         ChangeScene(nameChargingScene);
 
@@ -42,7 +42,7 @@ public class SceneLoader : MonoBehaviour
 
     private IEnumerator ChargeScene(string name)
     {
-        while(timeToChargeScene >= changeSceneTimer)
+        while(timeToChargeScene > changeSceneTimer)
         {
             changeSceneTimer += timeToChargeScene;
             yield return null;
