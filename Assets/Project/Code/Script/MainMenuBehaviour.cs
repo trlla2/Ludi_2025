@@ -78,11 +78,11 @@ public class MainMenuBehaviour : MonoBehaviour
 
     public void OnPlayLVL1()
     {
-        SceneManager.LoadScene("BeatMakerSceneTest");
+        SceneLoader._instance.LoadWithChargeScene("BeatMakerSceneTest", "RockCharge");
     }
     public void OnPlayLVL2()
     {
-        // Load LVL 2
+        SceneLoader._instance.LoadWithChargeScene("BeatMakerSceneLevel2", "FlamencoCharge");
     }
 
     public void SetVolume()

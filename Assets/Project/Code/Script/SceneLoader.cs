@@ -1,9 +1,14 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader _instance { get; private set; }
+
+    [Header("SETUP")]
+    [SerializeField]
+    private float timeToChargeScene = 3f;
 
     private void Awake()
     {
@@ -27,15 +32,18 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void LoadWithChargeScene(string nameScene, string nameChargingScene)
     {
+        ChangeScene(nameChargingScene);
 
+        StartCoroutine(ChargeScene(nameScene));
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ChargeScene(string name)
     {
+        
+        yield return new WaitForSecondsRealtime(timeToChargeScene);
 
+        ChangeScene(name);
     }
 }
