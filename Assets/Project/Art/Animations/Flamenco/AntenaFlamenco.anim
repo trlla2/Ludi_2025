@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RiffPlaying
+  m_Name: AntenaFlamenco
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -8944850330420381882, guid: 0c6d4ba1f53e5904597a0ef1a9e8194d, type: 3}
+      value: {fileID: -7599046279519554953, guid: 326be54f6212cbe45823e183b632a462, type: 3}
     - time: 1
-      value: {fileID: 7315634020527938151, guid: 0cccdfca88c39334897a644f5a142945, type: 3}
+      value: {fileID: 6981889753120788289, guid: 97b52db4371f328418877c60730d061c, type: 3}
     - time: 2
-      value: {fileID: -8944850330420381882, guid: 0c6d4ba1f53e5904597a0ef1a9e8194d, type: 3}
+      value: {fileID: -7599046279519554953, guid: 326be54f6212cbe45823e183b632a462, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -8944850330420381882, guid: 0c6d4ba1f53e5904597a0ef1a9e8194d, type: 3}
-    - {fileID: 7315634020527938151, guid: 0cccdfca88c39334897a644f5a142945, type: 3}
-    - {fileID: -8944850330420381882, guid: 0c6d4ba1f53e5904597a0ef1a9e8194d, type: 3}
+    - {fileID: -7599046279519554953, guid: 326be54f6212cbe45823e183b632a462, type: 3}
+    - {fileID: 6981889753120788289, guid: 97b52db4371f328418877c60730d061c, type: 3}
+    - {fileID: -7599046279519554953, guid: 326be54f6212cbe45823e183b632a462, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

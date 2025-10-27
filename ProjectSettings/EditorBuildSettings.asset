@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/TestRoc.unity
     guid: 7868240774c33de46885d1984c8c3eb1
+  - enabled: 1
+    path: Assets/Project/Scenes/BeatMakerSceneLevel2.unity
+    guid: 95491425b573b0e4083e7f391b7c7402
+  - enabled: 1
+    path: Assets/Project/Scenes/TestRocLevel2.unity
+    guid: d48cde360fb947940921398079ddbc61
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
