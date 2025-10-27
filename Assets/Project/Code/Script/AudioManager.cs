@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
         instrumentsList = audioContainer.GetComponentsInChildren<AudioSource>();
     }
 
-    private void StartPlaying()
+    public void StartPlaying()
     {
         foreach (AudioSource audio in instrumentsList)
         {
@@ -45,7 +45,7 @@ public class AudioManager : MonoBehaviour
 
         audio.mute = false;
         instrumentsPlaying++;
-
+     
         if (instrumentsPlaying >= 4)
             OnAllInstrumentsPlaying.Invoke();
     }
@@ -56,5 +56,11 @@ public class AudioManager : MonoBehaviour
         {
             audio.Pause();
         }
+    }
+
+    public void KillAudioManager()
+    {
+        instrumentsPlaying = 0;
+        Destroy(this.gameObject);
     }
 }
