@@ -2667,14 +2667,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614609031}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.004628241, y: 0.14211078, z: 4.5477853}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1335501162}
   - {fileID: 141795109}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1722010735}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &632229602
 GameObject:
@@ -6474,7 +6474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentInstrument: {fileID: 0}
-  requiredInstrumentType: 3
+  requiredInstrumentType: 4
   OnGoodDrop:
     m_PersistentCalls:
       m_Calls:
@@ -7550,7 +7550,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 614609032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1722010736
@@ -7635,7 +7636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentInstrument: {fileID: 0}
-  requiredInstrumentType: 0
+  requiredInstrumentType: 1
   OnGoodDrop:
     m_PersistentCalls:
       m_Calls:
@@ -10620,4 +10621,3 @@ SceneRoots:
   - {fileID: 2058205997}
   - {fileID: 1272760996}
   - {fileID: 701100379}
-  - {fileID: 614609032}
