@@ -29,7 +29,7 @@ public class TextHitBehaviour : MonoBehaviour
 
     [Header("Animation")]
     [SerializeField] private float animationDuration = .4f;
-    [SerializeField] private float currentAnimationTime = 0f;
+    private float currentAnimationTime = 0f;
     [SerializeField] 
     private AnimationCurve curve = AnimationCurve.Linear(0,0,1,1);
     [SerializeField]

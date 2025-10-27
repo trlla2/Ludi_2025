@@ -9,7 +9,6 @@ public class SceneLoader : MonoBehaviour
     [Header("SETUP")]
     [SerializeField]
     private float timeToChargeScene = 3f;
-    private float changeSceneTimer = 0;
 
     private void Awake()
     {
@@ -42,12 +41,9 @@ public class SceneLoader : MonoBehaviour
 
     private IEnumerator ChargeScene(string name)
     {
-        while(timeToChargeScene > changeSceneTimer)
-        {
-            changeSceneTimer += timeToChargeScene;
-            yield return null;
-        }
-        changeSceneTimer = 0;
+        
+        yield return new WaitForSecondsRealtime(timeToChargeScene);
+
         ChangeScene(name);
     }
 }
