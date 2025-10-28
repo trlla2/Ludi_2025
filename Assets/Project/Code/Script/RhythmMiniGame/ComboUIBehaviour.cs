@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class ComboUIBehaviour : MonoBehaviour
 {
@@ -9,6 +8,9 @@ public class ComboUIBehaviour : MonoBehaviour
     [Header("SETUP")]
     [SerializeField]
     private ParticleSystem comboParticles;
+
+    [SerializeField]
+    private ParticleSystem[] confettis;
 
     private void Start()
     {
@@ -21,6 +23,14 @@ public class ComboUIBehaviour : MonoBehaviour
         {
             tm.text = combo.ToString() + "x";
             comboParticles.Play();
+
+            if(combo >= 6)
+            {
+                foreach(ParticleSystem c in confettis)
+                {
+                    c.Play();
+                }
+            }
         }
         else 
         {
