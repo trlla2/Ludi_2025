@@ -31,7 +31,7 @@ public class RhythmGameManager : MonoBehaviour
     private float goodWindow = 0.7f;
     [SerializeField]
     [Range(2, 20)]
-    private int minCombo = 4;
+    private int minCombo = 6;
     private int currentCombo = 0;
 
     [Header("Points")]
@@ -89,7 +89,8 @@ public class RhythmGameManager : MonoBehaviour
         
         if (GetBeatTime() < excellentWindow && GetBeatTime() > -excellentWindow)
         {
-            currentCombo++;
+            if(currentCombo < minCombo)
+                currentCombo++;
             score += excellentPoints * currentCombo;
             OnButtonHit?.Invoke(3);
             OnComboChange?.Invoke(currentCombo);
@@ -97,7 +98,8 @@ public class RhythmGameManager : MonoBehaviour
         }
         else if (GetBeatTime() < greatWindow && GetBeatTime() > -greatWindow)
         {
-            currentCombo++;
+            if (currentCombo < minCombo)
+                currentCombo++;
             score += greatPoints * currentCombo;
             OnButtonHit?.Invoke(2);
             OnComboChange?.Invoke(currentCombo);
