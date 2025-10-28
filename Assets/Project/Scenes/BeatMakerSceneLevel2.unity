@@ -2720,7 +2720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -144.89497}
+  m_AnchoredPosition: {x: 0, y: -144.89496}
   m_SizeDelta: {x: -799, y: -627.1699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &635948926
@@ -7442,7 +7442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TOCO LES CASTANYOLES!!!
+  m_text: "TOCO \nEL BAIX!!!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6efefe385b56eff4b91a08ac487c80cb, type: 2}
   m_sharedMaterial: {fileID: 4022978834354669514, guid: 6efefe385b56eff4b91a08ac487c80cb, type: 2}
@@ -7469,8 +7469,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7568,22 +7568,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioContainer: {fileID: 1335501161}
   instrumentsList: []
-  rhythmScene: 
+  rhythmScene: TestRocLevel2
   OnAllInstrumentsPlaying:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2058205996}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: TestRocLevel2
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1726501302
 GameObject:
   m_ObjectHideFlags: 0
@@ -8873,7 +8861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -145.39497}
+  m_AnchoredPosition: {x: 0, y: -145.39496}
   m_SizeDelta: {x: -799, y: -628.1699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2029780534
@@ -8954,6 +8942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d2ce1202453584a9aa3270e7f9d67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToChargeScene: 3
 --- !u!4 &2058205997
 Transform:
   m_ObjectHideFlags: 0
