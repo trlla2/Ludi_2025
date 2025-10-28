@@ -41,14 +41,14 @@ public class RhythmSyncSystem : MonoBehaviour
 
     private void Update()
     {
-        if (musicSource == null)
-            musicSource = AudioManager._instance.GetMetronom();
 
         if (musicSource.time >= musicSource.clip.length)
         {
             RhythmGameManager.Instance.SongEnded();
         }
     }
+
+   
 
     private void OnDestroy()
     {
@@ -60,6 +60,7 @@ public class RhythmSyncSystem : MonoBehaviour
     
     public float GetBeatTime()
     {
+
         float songTime = musicSource.time + initialDelay;
 
         float currentBeat = songTime / beatTime;
@@ -75,6 +76,7 @@ public class RhythmSyncSystem : MonoBehaviour
 
     public float GetHardBeatTime()
     {
+
         float songTime = musicSource.time + initialDelay;
 
         float currentBeat = songTime / hardBeatTime;
@@ -89,10 +91,12 @@ public class RhythmSyncSystem : MonoBehaviour
     }
     public void PauseMusic()
     {
+
         musicSource.Pause();
     }
     public void StartMusic()
     {
+
         musicSource.Play();
     }
 }

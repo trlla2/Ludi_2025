@@ -118,7 +118,6 @@ public class RhythmGameManager : MonoBehaviour
             OnButtonHit?.Invoke(0);
             errorCounter++;
         }
-        Debug.Log("Score " + score);
     }
 
     public void AddError()
