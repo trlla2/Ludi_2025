@@ -12329,7 +12329,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3, y: 0.1}
   m_AnchorMax: {x: 0.7, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -22.49408}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1685047424
@@ -13071,7 +13071,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.55}
   m_AnchorMin: {x: 0.7, y: 0.8}
   m_AnchorMax: {x: 0.9, y: 0.95}
-  m_AnchoredPosition: {x: 0, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: -4.2176514}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1870849866
@@ -13121,8 +13121,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13185,7 +13185,6 @@ MonoBehaviour:
   goodHit: {r: 0.018116713, g: 1, b: 0, a: 1}
   badHit: {r: 1, g: 0, b: 0, a: 1}
   animationDuration: 0.4
-  currentAnimationTime: 0
   curve:
     serializedVersion: 2
     m_Curve:

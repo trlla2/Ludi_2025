@@ -12983,8 +12983,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13047,7 +13047,6 @@ MonoBehaviour:
   goodHit: {r: 0.018116713, g: 1, b: 0, a: 1}
   badHit: {r: 1, g: 0, b: 0, a: 1}
   animationDuration: 0.4
-  currentAnimationTime: 0
   curve:
     serializedVersion: 2
     m_Curve:

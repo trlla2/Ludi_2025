@@ -77,7 +77,7 @@ public class TextHitBehaviour : MonoBehaviour
                 tm.color = greatHit;
                 break;
             case 3:
-                tm.text = "Excelent";
+                tm.text = "Excel·lent";
                 tm.color = excellentHit;
                 excellentParticles.Play();
                 break;
