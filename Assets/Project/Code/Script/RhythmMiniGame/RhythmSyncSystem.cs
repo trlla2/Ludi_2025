@@ -6,7 +6,7 @@ public class RhythmSyncSystem : MonoBehaviour
 {
     [Header("SETTINGS")]
     [SerializeField]
-    private int bpm = 120;
+    private float bpm = 120;
     float beatTime = 0;
     float hardBeatTime = 0;
 
