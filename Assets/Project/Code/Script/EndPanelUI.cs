@@ -38,6 +38,7 @@ public class EndPanelUI : MonoBehaviour
     }
     public void OnRestartButton()
     {
+        AudioManager._instance.KillAudioManager();
         SceneManager.LoadScene("BeatMakerSceneTest");
     }
 

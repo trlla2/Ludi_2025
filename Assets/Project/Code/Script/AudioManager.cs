@@ -60,6 +60,20 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public AudioSource GetMetronom()
+    {
+        AudioSource metronom = null;
+        foreach (AudioSource audio in instrumentsList)
+        {
+            if(audio.gameObject.name == "metronomo")
+            {
+                metronom = audio;
+            }
+        }
+        return metronom;
+
+    }
+
     public void KillAudioManager()
     {
         instrumentsPlaying = 0;

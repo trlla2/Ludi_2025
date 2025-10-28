@@ -35,15 +35,20 @@ public class RhythmSyncSystem : MonoBehaviour
         {
             RhythmGameManager.Instance.RegisterRhythmSystem(this);
         }
+
+        
     }
 
     private void Update()
     {
-        if(musicSource.time >= musicSource.clip.length)
+
+        if (musicSource.time >= musicSource.clip.length)
         {
             RhythmGameManager.Instance.SongEnded();
         }
     }
+
+   
 
     private void OnDestroy()
     {
@@ -55,6 +60,7 @@ public class RhythmSyncSystem : MonoBehaviour
     
     public float GetBeatTime()
     {
+
         float songTime = musicSource.time + initialDelay;
 
         float currentBeat = songTime / beatTime;
@@ -70,6 +76,7 @@ public class RhythmSyncSystem : MonoBehaviour
 
     public float GetHardBeatTime()
     {
+
         float songTime = musicSource.time + initialDelay;
 
         float currentBeat = songTime / hardBeatTime;
@@ -78,12 +85,18 @@ public class RhythmSyncSystem : MonoBehaviour
         float result = Mathf.Sin(currentBeat * 360 * Mathf.Deg2Rad);
         return result;
     }
+    public float GetAbsHardBeatTime()
+    {
+        return Mathf.Abs(GetHardBeatTime());
+    }
     public void PauseMusic()
     {
+
         musicSource.Pause();
     }
     public void StartMusic()
     {
+
         musicSource.Play();
     }
 }
