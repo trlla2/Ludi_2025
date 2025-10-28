@@ -33,6 +33,7 @@ public class EndPanelUI : MonoBehaviour
 
     public void OnMenuButton()
     {
+        AudioManager._instance.KillAudioManager();
         SceneManager.LoadScene("MainMenu");
     }
     public void OnRestartButton()
