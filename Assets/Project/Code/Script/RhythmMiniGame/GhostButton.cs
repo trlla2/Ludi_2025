@@ -7,9 +7,13 @@ public class GhostButton : MonoBehaviour
     private Image img;
 
     private bool triggerButton = false;
+
+    private Vector3 ogScale = Vector3.one;  
     private void Start()
     {
         img = GetComponent<Image>();
+
+        ogScale = transform.localScale;
     }
 
 
@@ -21,7 +25,7 @@ public class GhostButton : MonoBehaviour
         }
         else
         {
-            img.GetComponent<RectTransform>().localScale = Vector3.one;
+            img.GetComponent<RectTransform>().localScale = ogScale;
         }
     }
 
@@ -29,7 +33,7 @@ public class GhostButton : MonoBehaviour
     {
         float currentBeatTime = RhythmGameManager.Instance.GetAbsBeatTime();
 
-        img.GetComponent<RectTransform>().localScale = Vector3.one * (1.0f + 0.5f * currentBeatTime);
+        img.GetComponent<RectTransform>().localScale = ogScale * (1.0f + 0.5f * currentBeatTime);
 
     }
 
