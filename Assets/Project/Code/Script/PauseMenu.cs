@@ -47,6 +47,7 @@ public class PauseMenu : MonoBehaviour
     public void OnMenuButton()
     {
         AudioManager._instance?.KillAudioManager();
+        RhythmGameManager.Instance.ResetVariables();
         SceneManager.LoadScene(0);
         DisablePause();
 
