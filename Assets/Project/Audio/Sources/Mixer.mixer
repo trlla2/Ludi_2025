@@ -36,7 +36,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bass
+  m_Name: T-Crumb
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: cb5575dde4dbffa4ca09152184ed77f0
   m_Children: []
@@ -196,7 +196,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ElectricGuitar
+  m_Name: Riff
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 958596f8fda82ab4aa087fa985846398
   m_Children: []
@@ -215,7 +215,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Drums
+  m_Name: Antena
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 0eb33d440e72d4c4bae55685b2bca9e6
   m_Children: []
@@ -291,7 +291,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Voice
+  m_Name: McCrusty
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 6b1439a719b2e4946b3a3ee4ef36e1bb
   m_Children: []
